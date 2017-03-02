@@ -119,3 +119,4 @@ void calculateSquareTemplated()
   double value = 5.55;
   auto squaredValue = square(len);
 }
+

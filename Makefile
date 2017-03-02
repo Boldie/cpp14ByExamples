@@ -1,4 +1,4 @@
-all:  A1_Initializers A2_Auto A3_RangeBasedForLoop A3E_RangeBased_Solution A4_Decltype A5_Literals A6_Lambda A6E1_LambdaReturnvalue B1_ConstructorDelegation
+all:  A1_Initializers A2_Auto A3_RangeBasedForLoop A3E_RangeBased_Solution A4_Decltype A5_Literals A6_Lambda A6E1_LambdaReturnvalueSolution A6E2_LambdaSortingSolution B1_ConstructorDelegation B4_ExplicitClassDefinitions
 
 A1_Initializers: A1_Initializers.cpp
 	g++ -std=c++11 -o  $@  $^
@@ -21,9 +21,15 @@ A5_Literals: A5_Literals.cpp
 A6_Lambda: A6_Lambda.cpp
 	g++ -std=c++14 -o  $@  $^
 
-A6E1_LambdaReturnvalue: A6E1_LambdaReturnvalue.cpp
+A6E1_LambdaReturnvalueSolution: A6E1_LambdaReturnvalueSolution.cpp
+	g++ -std=c++14 -o  $@  $^
+
+A6E2_LambdaSortingSolution: A6E2_LambdaSortingSolution.cpp
 	g++ -std=c++14 -o  $@  $^
 
 B1_ConstructorDelegation: B1_ConstructorDelegation.cpp
+	g++ -std=c++14 -o  $@  $^
+
+B4_ExplicitClassDefinitions: B4_ExplicitClassDefinitions.cpp
 	g++ -std=c++14 -o  $@  $^
 

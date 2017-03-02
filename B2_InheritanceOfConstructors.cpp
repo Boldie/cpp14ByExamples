@@ -78,9 +78,7 @@ namespace cpp14style_MultipleInheritance {
   class Base1 {
   public:
     virtual ~Base1() {}
-
     Base1( int i ): m_i(i) {}
-
   private:
     int m_i;
   };
@@ -88,9 +86,7 @@ namespace cpp14style_MultipleInheritance {
   class Base2 {
   public:
     virtual ~Base2() {}
-
     Base2( int i ): m_i(i) {}
-
   private:
     int m_i;
   };

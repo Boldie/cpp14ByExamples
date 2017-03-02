@@ -36,20 +36,18 @@ int main()
   /////////////////////////////////////////////////////////////////////////////
   // Classical function object
   {
-    struct FuncObj
+    struct Functor
     {
-      FuncObj(int& counter): counter(counter) {}
-      void operator()(int v) {
-        if (v >50)
-          ++counter;
+      Functor(int& value): m_v(value) {}
+      bool operator()(int v) {
+        return v > m_v;
       }
 
-      int& counter;
+      int& m_v;
     };
 
-    int myCounter = 0;
-
-    for_each( myList.begin(), myList.end(), FuncObj(myCounter) );
+    int i = 50;
+    int myCounter = count_if( myList.begin(), myList.end(), Functor(i) );
     // fo(1);
     // fo(5);
     // ....
@@ -61,12 +59,12 @@ int main()
   /////////////////////////////////////////////////////////////////////////////
   // Count numbers > 50 inside the list ...
   {
-    int counter = 0;
-    for_each( myList.begin(), myList.end(),
-        [&counter](int v){ if (v>50) ++counter; }
+    int value = 50;
+    int count = count_if( myList.begin(), myList.end(),
+        [&value](int v){ return v > value; }
     );
 
-    cout << "Lambda way: Found " << counter << " objects > 50." << endl;
+    cout << "Lambda way: Found " << count << " objects > 50." << endl;
   }
 
   {
